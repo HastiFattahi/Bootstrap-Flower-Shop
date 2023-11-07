@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Green</title>
+    <link rel="stylesheet" href="styles/products.css">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <script src="../js/bootstrap.bundle.js"></script>
+    <script src="../jquery-3.6.3.min.js"></script>
+    <script src="https://kit.fontawesome.com/5fbbef8f0b.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-sm">
+        <div class="container-fluid justify-content-between">
+            <div class="d-flex">
+                <!-- logo -->
+                <a href="index.html" class="navbar-brand">
+                    <img src="pics/logo.png" id="logo" alt="logo">
+                </a>  
+                <div id="shopping-search-div">
+                    <a href="#shopping-offcanvas" data-bs-toggle="offcanvas">
+                        <img src="pics/shopping-bag.png" title="سبد خرید" alt="سبد خرید">
+                    </a>
+                    <a href="#search-modal" data-bs-toggle="modal"><img src="pics/search.png" title="جستجو" alt="جستجو"></a> 
+                </div>
+            </div>
+            
+            <div id="menu-list">
+                <button class="navbar-toggler" data-bs-toggle="offcanvas" data-bs-target="#collapse-offcanvas">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="offcanvas offcanvas-end p-4" id="collapse-offcanvas">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a href="index.html" class="nav-link active">خانه</a></li>
+                        <li class="nav-item"><a href="index.html" class="nav-link">بلاگ</a></li>
+                        <li class="nav-item"><a href="products.html" class="nav-link">محصولات</a></li>
+                        <li class="nav-item"><a href="#login-modal" data-bs-toggle="modal" class="nav-link">ورود/ثبت نام</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- Login Modal -->
+    <div class="modal" id="login-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                    <h5>ورود</h5>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <h6 class="mt-5">نام کاربری:</h6>
+                        <div class="input-group mb-5 ">
+                            <span class="input-group-text"><img src="pics/username.png" title="نام کاربری" alt="نام کاربری"></span>
+                            <input type="text" placeholder="نام کاربری" class="form-control">
+                        </div>
+                        <h6>رمز:</h6>
+                        <div class="input-group mb-5">
+                            <span class="input-group-text"><img src="pics/password.png" title="رمز" alt="رمز"></span>
+                            <input type="password" placeholder="رمز" class="form-control">
+                        </div>
+                        <div class="d-flex justify-content-end">
+                            <a href="#signup-modal" data-bs-toggle="modal">هنوز ثبت نام نکرده اید؟</a>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline-success m-auto">ورود</button>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div class="modal" id="signup-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="btn btn-close" data-bs-dismiss="modal"></button>
+                    <h5>ثبت نام</h5>
+                </div>
+                <div class="modal-body">
+                    <form action="">
+                        <h6 class="mt-5">ایمیل :</h6>
+                        <div class="input-group mb-5 ">
+                            <span class="input-group-text"><img src="pics/mail.png" title="نام کاربری" alt="نام کاربری"></span>
+                            <input type="text" placeholder="نام کاربری" class="form-control">
+                        </div>
+                        <h6 class="mt-5">نام کاربری:</h6>
+                        <div class="input-group mb-5 ">
+                            <span class="input-group-text"><img src="pics/username.png" title="نام کاربری" alt="نام کاربری"></span>
+                            <input type="text" placeholder="نام کاربری" class="form-control">
+                        </div>
+                        <h6>رمز:</h6>
+                        <div class="input-group mb-5">
+                            <span class="input-group-text"><img src="pics/password.png" title="رمز" alt="رمز"></span>
+                            <input type="password" placeholder="رمز" class="form-control">
+                        </div>
+                        <h6>تکرار رمز:</h6>
+                        <div class="input-group mb-5">
+                            <span class="input-group-text"><img src="pics/password.png" title="تکرار رمز" alt="تکرار رمز"></span>
+                            <input type="password" placeholder="تکرار رمز" class="form-control">
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-outline-success m-auto">ثبت نام</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- shopping offcanvs -->
+    <div class="offcanvas offcanvas-start" id="shopping-offcanvas" data-bs-scroll="true">
+        <div class="offcanvas-header">
+            <button class="btn btn-close" data-bs-dismiss="offcanvas"></button>
+            <h5>سبد خرید</h5>
+        </div>
+        <div class="offcanvas-body">
+            <p>:(</p>
+            <p>سبد خرید شما خالی است.</p>   
+        </div>
+    </div>
+    <!-- search modal -->
+    <div class="modal" id="search-modal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <form>
+                        <div class="input-group ">
+                            <span class="input-group-text"><img src="pics/search.png" title="جستجو" alt="جستجو"></span>
+                            <input type="text" placeholder="جستجو" class="form-control">
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- alert -->
+        <div class="alert alert-info alert-dismissible show fade">
+            <button class="btn btn-close" data-bs-dismiss="alert"></button>
+            <p>از بخش های مختلف این صفحه دیدن کنید!</p>
+        </div>
+    
+<!-- main -->  
+<main>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a href="#tab1" class="nav-link active" data-bs-toggle="tab">خانگی</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tab2" class="nav-link" data-bs-toggle="tab">دفتر</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tab3" class="nav-link" data-bs-toggle="tab">کاکتوس</a>
+        </li>
+    </ul>
+    
+        <div class="tab-content">
+            <!-- Tab home -->
+            <div class="tab-pane active" id="tab1">
+                <div class="d-flex justify-content-around w-100 tabs">
+                    <div class="card col-2 m-2 d-inline-block">
+                        <div class="card-header">
+                            <img src="pics/feey-table3.jpg" class="card-img m-auto" alt="">
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <h5>پیرومیا</h5>
+                            <p>1,000,000ريال</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-success w-100">خرید</button>
+                        </div>
+                    </div>
+    
+                    <div class="card col-2 m-2 d-inline-block">
+                        <div class="card-header">
+                            <img src="pics/feey-table4.jpg" class="card-img m-auto" alt="">
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <h5>پتوس</h5>
+                            <p>1,600,000ريال</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-success w-100">خرید</button>
+                        </div>
+                    </div>
+    
+                    <div class="card col-2 m-2 d-inline-block">
+                        <div class="card-header">
+                            <img src="pics/feey3.jpg" class="card-img m-auto" alt="">
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <h5>ته نانته</h5>
+                            <p>2,100,000ريال</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-success w-100">خرید</button>
+                        </div>
+                    </div>
+    
+                    <div class="card col-2 m-2 d-inline-block">
+                        <div class="card-header">
+                            <img src="pics/feey4.jpg" class="card-img m-auto" alt="">
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <h5>پتوس</h5>
+                            <p>1,400,000ريال</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-success w-100">خرید</button>
+                        </div>
+                    </div>
+    
+                    <div class="card col-2 m-2 d-inline-block">
+                        <div class="card-header">
+                            <img src="pics/feey5.jpg" class="card-img m-auto" alt="">
+                        </div>
+                        <div class="card-body d-flex justify-content-between">
+                            <h5>برکین</h5>
+                            <p>2,200,000ريال</p>
+                        </div>
+                        <div class="card-footer">
+                            <button class="btn btn-outline-success w-100">خرید</button>
+                        </div>
+                    </div>
+                </div>
+                
+            </div>
+            <!-- Tab office -->
+            <div class="tab-pane" id="tab2">
+                <div class="d-flex justify-content-around w-100 tabs">
+                <div class="card col-2 m-2 d-inline-block">
+                    <div class="card-header">
+                        <img src="pics/feey-table.jpg" class="card-img m-auto" alt="">
+                    </div>
+                    <div class="card-body d-flex justify-content-between">
+                        <h5>زاموفیلیا</h5>
+                        <p>1,500,000ريال</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline-success w-100">خرید</button>
+                    </div>
+                </div>
+                <div class="card col-2 m-2 d-inline-block">
+                    <div class="card-header">
+                        <img src="pics/feey2.jpg" class="card-img m-auto" alt="">
+                    </div>
+                    <div class="card-body d-flex justify-content-between">
+                        <h5>جگر زلیخا</h5>
+                        <p>1,300,000ريال</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline-success w-100">خرید</button>
+                    </div>
+                </div>
+                </div>
+            </div>
+            <!-- Tab Cactus -->
+            <div class="tab-pane" id="tab3">
+                <div class="d-flex justify-content-around w-100 tabs">
+                <div class="card col-2 m-2 d-inline-block">
+                    <div class="card-header">
+                        <img src="pics/feey-table2.jpg" class="card-img m-auto" alt="">
+                    </div>
+                    <div class="card-body d-flex justify-content-between">
+                        <h5>سوییت هارت</h5>
+                        <p>900,000ريال</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline-success w-100">خرید</button>
+                    </div>
+                </div>
+
+                <div class="card col-2 m-2 d-inline-block">
+                    <div class="card-header">
+                        <img src="pics/feey1.jpg" class="card-img m-auto" alt="">
+                    </div>
+                    <div class="card-body d-flex justify-content-between">
+                        <h5>نیزه آفریقایی</h5>
+                        <p>1,500,000ريال</p>
+                    </div>
+                    <div class="card-footer">
+                        <button class="btn btn-outline-success w-100">خرید</button>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+   
+</main>
+    
+    
+
+
+   
+
+<!-- footer -->
+        <footer class="container-fluid mt-2">
+            <div class="col-6 p-2">
+                <img id="logofooter" src="pics/logo-removebg-preview.png" alt="Logo">
+                <p>               
+                     در فروشگاه اینترنتی Green ما قصد داریم، طبیعت را به خانه شما بیاوریم.
+                </p>
+            </div>
+            <div class="col-3 p-2" id="footer-social">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+                    <path d="M504 256C504 119 393 8 256 8S8 119 8 256c0 123.78 90.69 226.38 209.25 245V327.69h-63V256h63v-54.64c0-62.15 37-96.48 93.67-96.48 27.14 0 55.52 4.84 55.52 4.84v61h-31.28c-30.8 0-40.41 19.12-40.41 38.73V256h68.78l-11 71.69h-57.78V501C413.31 482.38 504 379.78 504 256z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+                    <path d="M224.1 141c-63.6 0-114.9 51.3-114.9 114.9s51.3 114.9 114.9 114.9S339 319.5 339 255.9 287.7 141 224.1 141zm0 189.6c-41.1 0-74.7-33.5-74.7-74.7s33.5-74.7 74.7-74.7 74.7 33.5 74.7 74.7-33.6 74.7-74.7 74.7zm146.4-194.3c0 14.9-12 26.8-26.8 26.8-14.9 0-26.8-12-26.8-26.8s12-26.8 26.8-26.8 26.8 12 26.8 26.8zm76.1 27.2c-1.7-35.9-9.9-67.7-36.2-93.9-26.2-26.2-58-34.4-93.9-36.2-37-2.1-147.9-2.1-184.9 0-35.8 1.7-67.6 9.9-93.9 36.1s-34.4 58-36.2 93.9c-2.1 37-2.1 147.9 0 184.9 1.7 35.9 9.9 67.7 36.2 93.9s58 34.4 93.9 36.2c37 2.1 147.9 2.1 184.9 0 35.9-1.7 67.7-9.9 93.9-36.2 26.2-26.2 34.4-58 36.2-93.9 2.1-37 2.1-147.8 0-184.8zM398.8 388c-7.8 19.6-22.9 34.7-42.6 42.6-29.5 11.7-99.5 9-132.1 9s-102.7 2.6-132.1-9c-19.6-7.8-34.7-22.9-42.6-42.6-11.7-29.5-9-99.5-9-132.1s-2.6-102.7 9-132.1c7.8-19.6 22.9-34.7 42.6-42.6 29.5-11.7 99.5-9 132.1-9s102.7-2.6 132.1 9c19.6 7.8 34.7 22.9 42.6 42.6 11.7 29.5 9 99.5 9 132.1s2.7 102.7-9 132.1z"/>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512">
+                    <path d="M248,8C111.033,8,0,119.033,0,256S111.033,504,248,504,496,392.967,496,256,384.967,8,248,8ZM362.952,176.66c-3.732,39.215-19.881,134.378-28.1,178.3-3.476,18.584-10.322,24.816-16.948,25.425-14.4,1.326-25.338-9.517-39.287-18.661-21.827-14.308-34.158-23.215-55.346-37.177-24.485-16.135-8.612-25,5.342-39.5,3.652-3.793,67.107-61.51,68.335-66.746.153-.655.3-3.1-1.154-4.384s-3.59-.849-5.135-.5q-3.283.746-104.608,69.142-14.845,10.194-26.894,9.934c-8.855-.191-25.888-5.006-38.551-9.123-15.531-5.048-27.875-7.717-26.8-16.291q.84-6.7,18.45-13.7,108.446-47.248,144.628-62.3c68.872-28.647,83.183-33.623,92.511-33.789,2.052-.034,6.639.474,9.61,2.885a10.452,10.452,0,0,1,3.53,6.716A43.765,43.765,0,0,1,362.952,176.66Z"/>
+                </svg>
+            </div>
+            <div class="col-3 p-2" id="footer-links">
+                    <a class=" mb-4 hover-underline-animation" href="index.html">خانه</a><br>
+                    <a class=" mb-4 hover-underline-animation" href="products.html">محصولات</a><br>
+                    <a class=" mb-4 hover-underline-animation" data-bs-toggle="modal" href="#signup-modal">ثبت نام</a><br>
+                    <a class=" mb-4 hover-underline-animation" data-bs-toggle="modal" href="#login-modal">ورود</a><br>
+            </div>
+        </footer>
+</body>
+</html>
